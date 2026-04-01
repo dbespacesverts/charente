@@ -219,3 +219,15 @@ footer a:hover { color: rgba(255,255,255,0.7); }
   .nav-logo img { height: 40px; }
   .btn-devis { padding: 8px 14px; font-size: 12px; }
 }
+
+/* HERO STATS — anti-coupure texte sur très petits écrans */
+.hero-stats { overflow: visible; }
+.hero-stat { overflow: hidden; }
+.stat-num { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stat-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+@media (max-width: 400px) {
+  .hero-stat { padding: 10px 4px; }
+  .stat-num { font-size: 11px; }
+  .stat-label { font-size: 7px; }
+}
