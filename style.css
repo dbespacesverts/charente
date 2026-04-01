@@ -228,3 +228,13 @@ footer a:hover { color: rgba(255,255,255,0.7); }
   .stat-num { font-size: 11px; }
   .stat-label { font-size: 7px; }
 }
+
+/* Ordre mobile : logo | devis | burger | loupe */
+@media (max-width: 900px) {
+  nav { flex-wrap: nowrap; }
+  .nav-right { order: 2; gap: 8px; }
+  .nav-mobile-toggle { order: 3; }
+  .btn-devis { order: 1; }
+  .nav-search { order: 2; }
+  .nav-social { display: none; }
+}
