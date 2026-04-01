@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DB Espaces Verts — Entretien jardin & extérieur Angoulême, Charente</title>
+<meta name="description" content="DB Espaces Verts, entreprise d'entretien d'extérieur basée à Angoulême. Tonte, élagage, taille de haie, débroussaillage, nettoyage toiture en Charente. Devis gratuit, crédit d'impôt -50%, CESU+.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Rechercher une prestation..." onkeydown="if(event.key==='Escape')closeSearch()">
+    <button onclick="doSearch()">Rechercher</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html"><img src="logo.png" alt="DB Espaces Verts"></a>
+  <div class="nav-center">
+    <a href="#prestations" class="active">Prestations</a>
+    <a href="#pourquoi">Pourquoi nous</a>
+    <a href="#realisations">Nos réalisations</a>
+    <a href="#avis">Avis clients</a>
+    <a href="#apropos">À propos</a>
+  </div>
+  <button class="nav-mobile-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-right">
+    <div class="nav-social">
+      <a href="https://www.facebook.com/61578576101390/" target="_blank" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/dbespacesverts/" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@dbespacesverts" target="_blank" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+    </div>
+    <button class="nav-search" onclick="openSearch()" aria-label="Rechercher">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <a class="btn-devis" href="#contact">Demande de devis</a>
+  </div>
+</nav>
+
+<!-- MENU MOBILE -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#prestations" onclick="closeMenu()">Prestations</a>
+  <a href="#pourquoi" onclick="closeMenu()">Pourquoi nous</a>
+  <a href="#realisations" onclick="closeMenu()">Nos réalisations</a>
+  <a href="#avis" onclick="closeMenu()">Avis clients</a>
+  <a href="#apropos" onclick="closeMenu()">À propos</a>
+  <div class="nav-mobile-social">
+    <a href="https://www.facebook.com/61578576101390/" target="_blank"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="https://www.instagram.com/dbespacesverts/" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a href="https://www.tiktok.com/@dbespacesverts" target="_blank"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+  </div>
+  <a class="btn-devis" href="#contact" onclick="closeMenu()">Demande de devis</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><img src="photo-debroussaillage.png" alt="Entretien espaces verts Charente"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">📍 Angoulême — Charente (16)</div>
+    <h1>Votre extérieur,<br><em>magnifié</em> avec soin.</h1>
+    <p class="hero-sub">Tonte, élagage, nettoyage... DB Espaces Verts prend en charge l'entretien complet de vos jardins et extérieurs pour particuliers, professionnels et copropriétés sur toute la Charente.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#contact">Devis gratuit</a>
+      <a class="btn-outline-white" href="#prestations">Voir nos prestations</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="stat-num">Gratuit</div><div class="stat-label">Devis sans engagement</div></div>
+    <div class="hero-stat"><div class="stat-num">-50%</div><div class="stat-label">Crédit d'impôt</div></div>
+    <div class="hero-stat"><div class="stat-num">CESU+</div><div class="stat-label">Particulier / salarié</div></div>
+    <div class="hero-stat"><div class="stat-num">Charente</div><div class="stat-label">Zone d'intervention</div></div>
+  </div>
+</section>
+
+<!-- PRESTATIONS -->
+<section class="section" id="prestations">
+  <div class="section-tag">Nos prestations</div>
+  <h2 class="section-title">Tous vos travaux<br><em>d'extérieur</em></h2>
+  <p class="section-sub">Du jardin d'agrément à l'entretien courant, DB Espaces Verts intervient pour tous vos besoins extérieurs en Charente.</p>
+  <div class="prestations-grid">
+
+    <a class="prestation-card" href="tonte-pelouse.html">
+      <img class="prestation-img" src="photo-tonte.png" alt="Tonte de pelouse Angoulême">
+      <div class="prestation-body">
+        <div class="prestation-num">01</div>
+        <div class="prestation-name">Tonte de pelouse</div>
+        <div class="prestation-desc">Entretien régulier de votre gazon pour un jardin toujours impeccable.</div>
+        <div class="prestation-link">En savoir plus →</div>
+      </div>
+    </a>
+
+    <a class="prestation-card" href="debroussaillage.html">
+      <img class="prestation-img" src="photo-debroussaillage.png" alt="Débroussaillage Charente">
+      <div class="prestation-body">
+        <div class="prestation-num">02</div>
+        <div class="prestation-name">Débroussaillage</div>
+        <div class="prestation-desc">Élimination des broussailles, ronces et végétation envahissante.</div>
+        <div class="prestation-link">En savoir plus →</div>
+      </div>
+    </a>
+
+    <a class="prestation-card" href="taille-haie-arbres.html">
+      <img class="prestation-img" src="photo-taille-haie.png" alt="Taille de haie Angoulême">
+      <div class="prestation-body">
+        <div class="prestation-num">03</div>
+        <div class="prestation-name">Taille haie & arbres</div>
+        <div class="prestation-desc">Façonnage précis de vos haies et arbres pour une silhouette parfaite.</div>
+        <div class="prestation-link">En savoir plus →</div>
+      </div>
+    </a>
+
+    <a class="prestation-card" href="elagage.html">
+      <img class="prestation-img" src="photo-elagage.png" alt="Élagage arbres Charente">
+      <div class="prestation-body">
+        <div class="prestation-num">04</div>
+        <div class="prestation-name">Élagage</div>
+        <div class="prestation-desc">Élagage professionnel en sécurité pour la santé de vos grands arbres.</div>
+        <div class="prestation-link">En savoir plus →</div>
+      </div>
+    </a>
+
+    <a class="prestation-card" href="desherbage.html">
+      <img class="prestation-img" src="photo-desherbage.png" alt="Désherbage Angoulême">
+      <div class="prestation-body">
+        <div class="prestation-num">05</div>
+        <div class="prestation-name">Désherbage</div>
+        <div class="prestation-desc">Traitement des mauvaises herbes sur allées, terrasses et massifs.</div>
+        <div class="prestation-link">En savoir plus →</div>
+      </div>
+    </a>
+
+    <a class="prestation-card" href="nettoyage-toiture.html">
+      <img class="prestation-img" src="photo-nettoyage-toiture.png" alt="Nettoyage toiture Charente">
+      <div class="prestation-body">
+        <div class="prestation-num">06</div>
+        <div class="prestation-name">Nettoyage toiture</div>
+        <div class="prestation-desc">Démoussage et nettoyage de toiture pour protéger votre habitat.</div>
+        <div class="prestation-link">En savoir plus →</div>
+      </div>
+    </a>
+
+    <a class="prestation-card" href="nettoyage-haute-pression.html">
+      <img class="prestation-img" src="photo-haute-pression.png" alt="Nettoyage haute pression Angoulême">
+      <div class="prestation-body">
+        <div class="prestation-num">07</div>
+        <div class="prestation-name">Haute pression</div>
+        <div class="prestation-desc">Nettoyage terrasses, allées, façades et clôtures au karcher.</div>
+        <div class="prestation-link">En savoir plus →</div>
+      </div>
+    </a>
+
+    <div class="prestation-card" style="background:var(--green);border-color:var(--green);cursor:default;">
+      <div class="prestation-img" style="background:rgba(255,255,255,0.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+        <span style="font-size:36px;">📞</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.7);font-weight:600;">Un autre besoin ?</span>
+      </div>
+      <div class="prestation-body" style="background:var(--green);">
+        <div class="prestation-name" style="color:var(--white);">Devis personnalisé</div>
+        <div class="prestation-desc" style="color:rgba(255,255,255,0.65);">Nous nous adaptons à tous vos projets d'extérieur.</div>
+        <a class="prestation-link" href="#contact" style="color:var(--beige);">Nous contacter →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- POURQUOI NOUS -->
+<section class="pourquoi-section" id="pourquoi">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--beige);opacity:0.6;font-weight:600;margin-bottom:10px;">Nos engagements</div>
+    <h2 style="font-size:clamp(26px,3vw,40px);font-weight:800;color:var(--white);line-height:1.2;">Pourquoi choisir<br><em style="font-style:italic;font-family:'Lora',serif;color:var(--beige);font-weight:400;">DB Espaces Verts ?</em></h2>
+    <div class="pourquoi-grid">
+      <div class="pourquoi-card">
+        <div class="pourquoi-header"><span class="pourquoi-icon">📍</span><span class="pourquoi-title">Proximité</span></div>
+        <div class="pourquoi-text">Basé à Angoulême, nous intervenons rapidement sur toute la Charente. Pas de délais interminables — on est près de chez vous.</div>
+      </div>
+      <div class="pourquoi-card">
+        <div class="pourquoi-header"><span class="pourquoi-icon">🤝</span><span class="pourquoi-title">Relation de confiance</span></div>
+        <div class="pourquoi-text">Nous privilégions le contact direct et la transparence. Devis clair, communication honnête, résultat à la hauteur de vos attentes.</div>
+      </div>
+      <div class="pourquoi-card">
+        <div class="pourquoi-header"><span class="pourquoi-icon">🔧</span><span class="pourquoi-title">Adaptabilité</span></div>
+        <div class="pourquoi-text">Chaque chantier est unique. Nous adaptons nos méthodes et notre planning à vos besoins, régulier ou ponctuel.</div>
+      </div>
+      <div class="pourquoi-card">
+        <div class="pourquoi-header"><span class="pourquoi-icon">🏛️</span><span class="pourquoi-title">Crédit d'impôt -50%</span></div>
+        <div class="pourquoi-text">Nos prestations ouvrent droit à un crédit d'impôt de 50% pour les particuliers. On vous accompagne dans les démarches.</div>
+      </div>
+      <div class="pourquoi-card">
+        <div class="pourquoi-header"><span class="pourquoi-icon">💳</span><span class="pourquoi-title">CESU+</span></div>
+        <div class="pourquoi-text">Nous acceptons le CESU+ pour simplifier vos démarches en tant que particulier employeur ou salarié.</div>
+      </div>
+      <div class="pourquoi-card">
+        <div class="pourquoi-header"><span class="pourquoi-icon">⚡</span><span class="pourquoi-title">Intervention rapide</span></div>
+        <div class="pourquoi-text">Devis gratuit sur place, réponse rapide, planification flexible. Votre temps est précieux — nous en prenons soin.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANT / APRÈS -->
+<section class="avantapres-section" id="realisations">
+  <div class="section-tag">Nos réalisations</div>
+  <h2 class="section-title">Avant / <em>Après</em></h2>
+  <p class="section-sub" style="margin-bottom:28px;">Quelques exemples concrets de nos interventions en Charente.</p>
+  <div class="avantapres-grid">
+    <div class="aa-item">
+      <img src="avant1.jpg" alt="Avant taille de haie">
+      <div class="aa-label">Avant</div>
+    </div>
+    <div class="aa-item">
+      <img src="apres1.jpg" alt="Après taille de haie">
+      <div class="aa-label apres">Après</div>
+    </div>
+    <div class="aa-item">
+      <img src="avant2.jpg" alt="Avant élagage">
+      <div class="aa-label">Avant</div>
+    </div>
+    <div class="aa-item">
+      <img src="apres2.jpg" alt="Après élagage">
+      <div class="aa-label apres">Après</div>
+    </div>
+  </div>
+  <div class="avantapres-cta">
+    <a class="btn-outline-green" href="realisations.html">📷 Toutes nos réalisations</a>
+  </div>
+</section>
+
+<!-- AVIS CLIENTS -->
+<section class="avis-section" id="avis">
+  <div class="section-tag">Témoignages</div>
+  <h2 class="section-title">Avis de nos <em>clients</em></h2>
+  <div class="avis-grid">
+    <div class="avis-card">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-text">« Un travail rapide et impeccable, je recommande ! »</div>
+      <div class="avis-author">— Pascal</div>
+    </div>
+    <div class="avis-card">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-text">« Très professionnel, résultat parfait. »</div>
+      <div class="avis-author">— Martine</div>
+    </div>
+    <div class="avis-card">
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-text">« Jardin métamorphosé, merci ! »</div>
+      <div class="avis-author">— Chloé</div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section class="apropos-section" id="apropos">
+  <img class="apropos-img" src="photo-profil.png" alt="DB Espaces Verts — Angoulême">
+  <div class="apropos-right">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-light);font-weight:600;margin-bottom:10px;">À propos</div>
+    <h2>À propos de<br><em>DB Espaces Verts</em></h2>
+    <p>Basé à Angoulême et passionné par les espaces verts, DB Espaces Verts vous accompagne dans l'entretien et l'embellissement de vos extérieurs avec sérieux et réactivité.</p>
+    <p>Que vous soyez particulier, professionnel ou copropriété, nous intervenons sur toute la Charente avec le même engagement : un travail soigné, une relation de proximité et une vraie écoute de vos besoins.</p>
+    <p>Notre priorité, c'est votre satisfaction — et la durabilité de votre espace vert.</p>
+    <a class="btn-green" href="#contact" style="margin-top:8px;">Nous contacter</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-left">
+    <h2>Contactez<br><em>DB Espaces Verts</em></h2>
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div><div class="contact-label">Téléphone</div><div class="contact-value"><a href="tel:0677025502">06 77 02 55 02</a></div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:dbespacesverts@gmail.com">dbespacesverts@gmail.com</a></div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div><div class="contact-label">Zone d'intervention</div><div class="contact-value">Angoulême & toute la Charente (16)</div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">💳</div>
+      <div><div class="contact-label">CESU+</div><div class="contact-value">Particulier employeur / salarié</div></div>
+    </div>
+  </div>
+  <div class="contact-right">
+    <h3>Devis gratuit & sans engagement</h3>
+    <p>Un simple appel suffit. Nous nous déplaçons chez vous pour évaluer vos besoins et vous remettre un devis clair, gratuit et sans obligation.</p>
+    <p style="font-size:13px;">💡 Profitez du crédit d'impôt de 50% — on vous explique comment en bénéficier.</p>
+    <a class="btn-green" href="tel:0677025502">📞 Appeler maintenant</a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2025 <strong>DB Espaces Verts</strong> — Entretien d'extérieur en Charente</div>
+  <div>Angoulême (16) · <a href="tel:0677025502">06 77 02 55 02</a> · <a href="mailto:dbespacesverts@gmail.com">dbespacesverts@gmail.com</a></div>
+</footer>
+
+<script>
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
+function openSearch(){ document.getElementById('searchOverlay').classList.add('open'); setTimeout(()=>document.getElementById('searchInput').focus(),100); }
+function closeSearch(){ document.getElementById('searchOverlay').classList.remove('open'); }
+function doSearch(){
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const pages = {
+    'tonte':['tonte-pelouse.html'],'pelouse':['tonte-pelouse.html'],
+    'débroussaillage':['debroussaillage.html'],'broussailles':['debroussaillage.html'],
+    'haie':['taille-haie-arbres.html'],'taille':['taille-haie-arbres.html'],
+    'élagage':['elagage.html'],'arbre':['elagage.html'],
+    'désherbage':['desherbage.html'],'herbe':['desherbage.html'],
+    'toiture':['nettoyage-toiture.html'],'mousse':['nettoyage-toiture.html'],
+    'pression':['nettoyage-haute-pression.html'],'karcher':['nettoyage-haute-pression.html'],
+  };
+  for(const [key, val] of Object.entries(pages)){ if(q.includes(key)){ window.location.href=val[0]; return; } }
+  alert('Aucun résultat trouvé pour "'+q+'"');
+}
+</script>
+</body>
+</html>
