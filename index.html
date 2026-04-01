@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DB Espaces Verts — Entretien jardin & extérieur Angoulême, Charente</title>
+<title>DB Espaces Verts, Entretien jardin & extérieur Angoulême, Charente</title>
 <meta name="description" content="DB Espaces Verts, entreprise d'entretien d'extérieur basée à Angoulême. Tonte, élagage, taille de haie, débroussaillage, nettoyage toiture en Charente. Devis gratuit, crédit d'impôt -50%, CESU+.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -13,7 +13,7 @@
 <!-- SEARCH OVERLAY -->
 <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Rechercher une prestation..." onkeydown="if(event.key==='Escape')closeSearch()">
+    <input type="text" id="searchInput" placeholder="Rechercher une prestation..." onkeydown="if(event.key==='Escape')closeSearch();if(event.key==='Enter')doSearch()">
     <button onclick="doSearch()">Rechercher</button>
   </div>
 </div>
@@ -70,7 +70,7 @@
   <div class="hero-bg"><img src="photo-debroussaillage.png" alt="Entretien espaces verts Charente"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">📍 Angoulême — Charente (16)</div>
+    <div class="hero-badge">📍 Angoulême, Charente (16)</div>
     <h1>Votre extérieur,<br><em>magnifié</em> avec soin.</h1>
     <p class="hero-sub">Tonte, élagage, nettoyage... DB Espaces Verts prend en charge l'entretien complet de vos jardins et extérieurs pour particuliers, professionnels et copropriétés sur toute la Charente.</p>
     <div class="hero-btns">
@@ -186,7 +186,7 @@
     <div class="pourquoi-grid">
       <div class="pourquoi-card">
         <div class="pourquoi-header"><span class="pourquoi-icon">📍</span><span class="pourquoi-title">Proximité</span></div>
-        <div class="pourquoi-text">Basé à Angoulême, nous intervenons rapidement sur toute la Charente. Pas de délais interminables — on est près de chez vous.</div>
+        <div class="pourquoi-text">Basé à Angoulême, nous intervenons rapidement sur toute la Charente. Pas de délais interminables, on est près de chez vous.</div>
       </div>
       <div class="pourquoi-card">
         <div class="pourquoi-header"><span class="pourquoi-icon">🤝</span><span class="pourquoi-title">Relation de confiance</span></div>
@@ -206,7 +206,7 @@
       </div>
       <div class="pourquoi-card">
         <div class="pourquoi-header"><span class="pourquoi-icon">⚡</span><span class="pourquoi-title">Intervention rapide</span></div>
-        <div class="pourquoi-text">Devis gratuit sur place, réponse rapide, planification flexible. Votre temps est précieux — nous en prenons soin.</div>
+        <div class="pourquoi-text">Devis gratuit sur place, réponse rapide, planification flexible. Votre temps est précieux, nous en prenons soin.</div>
       </div>
     </div>
   </div>
@@ -248,30 +248,30 @@
     <div class="avis-card">
       <div class="avis-stars">★★★★★</div>
       <div class="avis-text">« Un travail rapide et impeccable, je recommande ! »</div>
-      <div class="avis-author">— Pascal</div>
+      <div class="avis-author">Pascal</div>
     </div>
     <div class="avis-card">
       <div class="avis-stars">★★★★★</div>
       <div class="avis-text">« Très professionnel, résultat parfait. »</div>
-      <div class="avis-author">— Martine</div>
+      <div class="avis-author">Martine</div>
     </div>
     <div class="avis-card">
       <div class="avis-stars">★★★★★</div>
       <div class="avis-text">« Jardin métamorphosé, merci ! »</div>
-      <div class="avis-author">— Chloé</div>
+      <div class="avis-author">Chloé</div>
     </div>
   </div>
 </section>
 
 <!-- À PROPOS -->
 <section class="apropos-section" id="apropos">
-  <img class="apropos-img" src="photo-profil.png" alt="DB Espaces Verts — Angoulême">
+  <img class="apropos-img" src="photo-profil.png" alt="DB Espaces Verts, Angoulême">
   <div class="apropos-right">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-light);font-weight:600;margin-bottom:10px;">À propos</div>
     <h2>À propos de<br><em>DB Espaces Verts</em></h2>
     <p>Basé à Angoulême et passionné par les espaces verts, DB Espaces Verts vous accompagne dans l'entretien et l'embellissement de vos extérieurs avec sérieux et réactivité.</p>
     <p>Que vous soyez particulier, professionnel ou copropriété, nous intervenons sur toute la Charente avec le même engagement : un travail soigné, une relation de proximité et une vraie écoute de vos besoins.</p>
-    <p>Notre priorité, c'est votre satisfaction — et la durabilité de votre espace vert.</p>
+    <p>Notre priorité, c'est votre satisfaction, et la durabilité de votre espace vert.</p>
     <a class="btn-green" href="#contact" style="margin-top:8px;">Nous contacter</a>
   </div>
 </section>
@@ -292,21 +292,19 @@
       <div class="contact-icon">📍</div>
       <div><div class="contact-label">Zone d'intervention</div><div class="contact-value">Angoulême & toute la Charente (16)</div></div>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">💳</div>
-      <div><div class="contact-label">CESU+</div><div class="contact-value">Particulier employeur / salarié</div></div>
-    </div>
+
   </div>
   <div class="contact-right">
     <h3>Devis gratuit & sans engagement</h3>
     <p>Un simple appel suffit. Nous nous déplaçons chez vous pour évaluer vos besoins et vous remettre un devis clair, gratuit et sans obligation.</p>
-    <p style="font-size:13px;">💡 Profitez du crédit d'impôt de 50% — on vous explique comment en bénéficier.</p>
+    <p style="font-size:13px;">💡 Profitez du crédit d'impôt de 50%, on vous explique comment en bénéficier.</p>
+    <p style="font-size:13px;">💳 Profitez du service CESU+.</p>
     <a class="btn-green" href="tel:0677025502">📞 Appeler maintenant</a>
   </div>
 </section>
 
 <footer>
-  <div>© 2025 <strong>DB Espaces Verts</strong> — Entretien d'extérieur en Charente</div>
+  <div>© 2025 <strong>DB Espaces Verts</strong>, Entretien d'extérieur en Charente</div>
   <div>Angoulême (16) · <a href="tel:0677025502">06 77 02 55 02</a> · <a href="mailto:dbespacesverts@gmail.com">dbespacesverts@gmail.com</a></div>
 </footer>
 
@@ -316,18 +314,31 @@ function closeMenu(){ document.getElementById('mobileMenu').classList.remove('op
 function openSearch(){ document.getElementById('searchOverlay').classList.add('open'); setTimeout(()=>document.getElementById('searchInput').focus(),100); }
 function closeSearch(){ document.getElementById('searchOverlay').classList.remove('open'); }
 function doSearch(){
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  const pages = {
-    'tonte':['tonte-pelouse.html'],'pelouse':['tonte-pelouse.html'],
-    'débroussaillage':['debroussaillage.html'],'broussailles':['debroussaillage.html'],
-    'haie':['taille-haie-arbres.html'],'taille':['taille-haie-arbres.html'],
-    'élagage':['elagage.html'],'arbre':['elagage.html'],
-    'désherbage':['desherbage.html'],'herbe':['desherbage.html'],
-    'toiture':['nettoyage-toiture.html'],'mousse':['nettoyage-toiture.html'],
-    'pression':['nettoyage-haute-pression.html'],'karcher':['nettoyage-haute-pression.html'],
-  };
-  for(const [key, val] of Object.entries(pages)){ if(q.includes(key)){ window.location.href=val[0]; return; } }
-  alert('Aucun résultat trouvé pour "'+q+'"');
+  const raw = document.getElementById('searchInput').value.toLowerCase();
+  const q = raw.normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const pages = [
+    {keys:['tonte','pelouse','gazon','herbe','lawn'],url:'tonte-pelouse.html'},
+    {keys:['debroussaillage','broussailles','ronces','friche','taillis'],url:'debroussaillage.html'},
+    {keys:['haie','taille','arbuste','buisson','laurier','thuya'],url:'taille-haie-arbres.html'},
+    {keys:['elagage','arbre','branche','coupe','abattage'],url:'elagage.html'},
+    {keys:['desherbage','mauvaise herbe','allée','terrasse','massif'],url:'desherbage.html'},
+    {keys:['toiture','mousse','toit','demoussage','tuile'],url:'nettoyage-toiture.html'},
+    {keys:['pression','karcher','dalle','facade','cloture','nettoyage'],url:'nettoyage-haute-pression.html'},
+  ];
+  for(const p of pages){
+    if(p.keys.some(k => q.includes(k.normalize('NFD').replace(/[̀-ͯ]/g,'')))){
+      window.location.href = p.url;
+      return;
+    }
+  }
+  // Si rien trouvé, afficher un message dans l'overlay
+  document.getElementById('searchInput').style.borderColor = 'red';
+  document.getElementById('searchInput').placeholder = 'Aucun résultat, essayez : tonte, haie, toiture...';
+  document.getElementById('searchInput').value = '';
+  setTimeout(()=>{
+    document.getElementById('searchInput').style.borderColor = '';
+    document.getElementById('searchInput').placeholder = 'Rechercher une prestation...';
+  }, 2500);
 }
 </script>
 </body>
